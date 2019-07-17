@@ -15,8 +15,7 @@ var Stack = function() {
   someInstance.pop = function() {
     var keys = Object.keys(storage);
     var key = keys.length-1;
-    var poppedValue = storage[''+key];
-    console.log("TryingToDelete:" + storage['' + key] + " Key:" + key);
+    var poppedValue = storage['' + key];
     delete storage[''+key];
     return poppedValue;
   };
