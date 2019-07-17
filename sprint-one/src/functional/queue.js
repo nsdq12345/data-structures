@@ -9,7 +9,7 @@ var Queue = function() {
   someInstance.enqueue = function(value) {
     var keys = Object.keys(storage);
     var key = keys[keys.length-1] + 1;
-    storage[''+key] = value;
+    storage['' + key] = value;
     return value;
   };
 
