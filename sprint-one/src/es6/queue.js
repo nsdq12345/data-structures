@@ -11,7 +11,7 @@ class Queue {
 
   enqueue(val) {
     var keys = Object.keys(this.storage);
-    var key = keys[key.length - 1] + 1;
+    var key = keys[keys.length - 1] + 1;
     this.storage[key] = val;
     return val;
   }
