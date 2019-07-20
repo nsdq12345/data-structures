@@ -53,7 +53,7 @@ var Node = function(value) {
 
   node.value = value;
   node.next = null;
-
+ 
   return node;
 };
 

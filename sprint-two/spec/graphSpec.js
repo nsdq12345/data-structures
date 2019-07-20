@@ -68,4 +68,11 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  //Bare minimum additional test
+  it('do nothing if trying to add an edge with non-existing node', function() {
+    graph.addNode(4);
+    graph.addEdge(4,5);
+    expect(graph.hasEdge(4,5)).to.equal(false);
+  });
 });

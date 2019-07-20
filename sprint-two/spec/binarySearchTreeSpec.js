@@ -37,4 +37,59 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  //Bare minimum requirements additional test
+  it('BST should be able to ignore duplicate values', function() {
+
+    var array = [];
+    var func = function(value) { array.push(value); };
+
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(1);
+    binarySearchTree.insert(5);
+
+    binarySearchTree.depthFirstLog(func);
+    expect(array).to.eql([5, 3, 1]);
+  });
+
+  it('should execute a callback on every value in a tree using "breadthFirstLog"', function() {
+    var array = [];
+    var func = function(value) { array.push(value); };
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(3);
+    binarySearchTree.insert(7);
+    binarySearchTree.breadthFirstLog(func);
+    expect(array).to.eql([5,2,7,3]);
+  });
+
+it('should find max depth', function() {
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(10);
+    expect(binarySearchTree.getMaxDepth(binarySearchTree)).to.eql(6);
+  });
+
+it('should find min depth', function() {
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(10);
+    expect(binarySearchTree.getMinDepth(binarySearchTree)).to.eql(3);
+  });
+
+it('should have middle value be the root value of the tree when balancing', function() {
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(4);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(9);
+    binarySearchTree.insert(10);
+    expect(binarySearchTree.value).to.eql(6);
+  });
+  
 });

@@ -16,6 +16,11 @@ describe('linkedList', function() {
     expect(linkedList.contains).to.be.a('function');
   });
 
+  //Bare minimum additional test
+  it('contain method should not fail when linked list is empty', function() {
+    expect(linkedList.contains(5)).to.equal(false);
+  });
+  
   it('should designate a new tail when new nodes are added', function() {
     linkedList.addToTail(4);
     expect(linkedList.tail.value).to.equal(4);

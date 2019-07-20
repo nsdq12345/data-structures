@@ -24,4 +24,11 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  // Bare minimum requirements additional test
+  it('should not increase the size of the set if a non-unique value is added', function() {
+    set.add('hi');
+    set.add('hi');
+    expect(Object.keys(set._storage).length).to.equal(1);
+  });
+
 });
